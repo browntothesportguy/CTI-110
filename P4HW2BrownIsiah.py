@@ -13,8 +13,10 @@ total_gross = 0
 name = input("Enter employee's name: ")
 
 while name != "done":
-
-
+    
+    # Add one to number of employees
+    total_employees += 1
+    
     hoursWorked = float(input("Enter number of hours worked: "))
 
     payRate = float(input("Enter employee's pay rate: "))
@@ -42,6 +44,12 @@ while name != "done":
 
         regPay = hoursWorked * payRate
         grossPay = regPay
+        
+    # Increament total pays
+    total_regular += regPay
+    total_overtime += overPay
+    total_gross += grossPay
+
 
     # Display output
 
@@ -55,11 +63,11 @@ while name != "done":
     # Ask the user for the next employee or Done
     name = input("Enter another employee of Done to quit: ")
 
-# Loop breaks here. Display your totals below
-
-
-
-
-
+# Loop breaks here. 
+# Display your totals below
+print(f"Total number of employees added: {total_employees}")
+print(f"Total amount paid for overtime: ${total_overtime:,.2f}")
+print(f"Total amount paid for regular hours: ${total_regular:,.2f}")
+print(f"Total amount paid in gross: ${total_gross:,.2f}")
 
     
